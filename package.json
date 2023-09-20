@@ -1,8 +1,13 @@
 {
+  "homepage": "https://avisaharan11.github.io/xylolimited",
   "dependencies": {
     "realm-web": "^2.0.0"
   },
   "devDependencies": {
     "gh-pages": "^6.0.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
