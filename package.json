@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "realm-web": "^2.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}

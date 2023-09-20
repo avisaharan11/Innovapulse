@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
-import Contact from './components/Contact';
 import NotifyMe from './components/NotifyMe';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <About />
       <NotifyMe />
-      <Contact />
+      <Footer />
     </div>
   );
 }
