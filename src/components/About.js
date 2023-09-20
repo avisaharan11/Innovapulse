@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="about">
             <h2>About Us</h2>
-            <p>Transforming the global freelance marketplace by connecting clients with pre-vetted Indian talent, backed by secure and instant financial transactions.</p>
+            <p>Transforming the global freelance marketplace by connecting clients with pre-vetted global talent, backed by instant job payments and least documentation.</p>
         </div>
     );
 };
