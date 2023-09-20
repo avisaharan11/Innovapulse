@@ -1,0 +1,33 @@
+.notify-me {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1; /* New Background Color */
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .notify-me input {
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .notify-me button {
+    padding: 10px 20px;
+    background-color: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .notify-me button:hover {
+    background-color: #0056b3;
+  }
+  
