@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/xyloLimited/static/css/main.457bf8b7.css",
+    "main.js": "/xyloLimited/static/js/main.9ee46b2c.js",
+    "static/js/787.25dc4f26.chunk.js": "/xyloLimited/static/js/787.25dc4f26.chunk.js",
+    "index.html": "/xyloLimited/index.html",
+    "main.457bf8b7.css.map": "/xyloLimited/static/css/main.457bf8b7.css.map",
+    "main.9ee46b2c.js.map": "/xyloLimited/static/js/main.9ee46b2c.js.map",
+    "787.25dc4f26.chunk.js.map": "/xyloLimited/static/js/787.25dc4f26.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.457bf8b7.css",
+    "static/js/main.9ee46b2c.js"
+  ]
+}
