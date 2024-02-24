@@ -97,9 +97,6 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="message-icon" onClick={handleIconClick}>
-        💬 <span className="icon-text">Get In Touch</span>
-      </div>
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <button className="hamburger" onClick={() => setIsNavVisible(!isNavVisible)}>
@@ -117,7 +114,9 @@ function App() {
           <h1>Welcome to Gignance</h1>
           <p>Your one-stop solution for IT, marketing, accounting, and consultancy services.</p>
         </section>
-
+        <div className="message-icon" onClick={handleIconClick}>
+        💬 <span className="icon-text">Get In Touch</span>
+      </div>
         <section id="services" className="services-section">
           <h2>Our Services</h2>
           <div className="services-container">
