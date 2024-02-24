@@ -1,38 +1,607 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #007bff; /* Primary color for your brand */
+  --secondary-color: #6c757d; /* Secondary color for accent */
+  --background-color: #f8f9fa; /* Light background color for a clean look */
+  --text-color: #212529; /* Primary text color */
+  --link-hover-color: #0056b3; /* Hover state color for links */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0px;
+}
+
+.App-logo {
+  height: 50px; /* Adjust according to your logo */
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover, nav a:focus {
+  background-color: var(--secondary-color);
+  outline: none;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.services-section, #about, #testimonials, #contact {
+  padding: 20px;
+  text-align: center;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-item, .testimonial-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.service-item:hover, .testimonial-item:hover {
+  transform: scale(1.05);
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: var(--primary-color);
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: var(--link-hover-color);
 }
 
-@keyframes App-logo-spin {
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+  }
+
+  .hero-section {
+    padding: 60px 20px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+:root {
+  --primary-color: #007bff; /* Adjusted for a more modern shade */
+  --secondary-color: #5cb85c; /* New secondary color for hover effects */
+  --background-color: #f8f9fa; /* Light background for contrast */
+  --text-color: #212529; /* Dark text for readability */
+  --hover-effect-color: #4cae4c; /* Color for service item hover */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header, main, footer {
+  width: 100%;
+  max-width: 1200px; /* Adjusts content width */
+  margin: auto; /* Centers content */
+}
+
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0px 15px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--secondary-color);
+}
+.hero-section {
+  padding: 100px 20px;
+  background: url('./background.webp'); /* Overlay for better text visibility */
+  background-size: cover;
+  color: black;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero-section h1 {
+  font-size: 2.5em; /* Increased size */
+  margin-bottom: 0.5em;
+}
+
+.hero-section p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: auto; /* Centers text */
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-item {
+  flex: 1 1 200px; /* Adjusts based on screen size */
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+  background-color: var(--hover-effect-color); /* New hover effect */
+}
+
+/* Additions for improved form and footer styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2em; /* Smaller text for smaller screens */
+  }
+
+  .hero-section p {
+    font-size: 1em;
+  }
+}
+
+/* Hero Section Background */
+.hero-section {
+  background-image: url('background.webp'); /* Update with the actual path */
+  background-size: cover;
+  background-position: center;
+  color: white; /* Adjust based on your design preference */
+  position: relative;
+  text-align: center;
+  padding: 100px 20px; /* Adjust padding as needed */
+}
+
+/* Background Overlay for Enhanced Text Visibility */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay; adjust opacity as needed */
+  z-index: 1;
+}
+
+/* Ensure Text is Visible Above Overlay */
+.hero-section h1, .hero-section p {
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Optional: Adds shadow to text for better readability */
+}
+
+/* Additional Styling for Hero Text */
+.hero-section h1 {
+  font-size: 2.5em; /* Adjust size as needed */
+  margin-bottom: 0.5em;
+}
+
+.hero-section p {
+  font-size: 1.2em; /* Adjust size as needed */
+  max-width: 600px; /* Keeps text lines at a readable length */
+  margin: auto; /* Centers the text block */
+}
+
+
+
+/* Show message icon only on mobile */
+@media (max-width: 768px) {
+  .message-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   .logo {
+    height: 40px; /* Adjust based on your preference */
+  }
+
+  nav a {
+    padding: 5px 8px; /* Reduce padding */
+    font-size: 14px; /* Smaller font size */
+  }
+}
+
+/* Chat Box Styling for Wider Screens */
+.chat-box {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  display: none; /* Controlled by React state */
+}
+
+/* Optional: Adjust display property based on a specific class added by React if needed */
+
+/* Highlighting the Get in Touch section */
+#contact {
+  background-color: #f0f9ff; /* Light background color for contrast */
+  padding: 50px 20px; /* Increase padding for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Soften edges */
+  margin: 40px 20px; /* Ensure some space around the section */
+  animation: fadeInUp 1s ease-out; /* Animation for attention */
+}
+
+/* Keyframes for the fadeInUp animation */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* Optional: Highlight on hover to draw more attention */
+#contact:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the message icon */
+.message-icon {
+  position: fixed;
+  right: 20px;
+  bottom: 270px;
+  background-color: var(--primary-color); /* Use your primary color */
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Hide the text by default */
+.icon-text {
+  display: none;
+  margin-left: 8px; /* Space between icon and text */
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .message-icon {
+    border-radius: 20px; /* Less rounded corners for wider layout */
+    padding: 10px 20px; /* More padding */
+  }
+  .stories-container{
+    justify-content: center;
+  }
+  
+  /* Show the text next to the icon */
+  .icon-text {
+    display: block;
+  }
+}
+/* Existing styles... */
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white; /* Adjust based on your theme */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Show the hamburger menu button on small screens */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none; /* Hide the nav by default on small screens */
+    flex-direction: column; /* Stack links vertically */
+  }
+
+  .nav-visible {
+    display: flex; /* Show nav when the state is active */
+  }
+
+  .App-header {
+    flex-direction: column;
+  }
+}
+
+/* Continue with existing styles... */
+/* Add to your existing styles */
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This keeps items spread out */
+  padding: 0 20px; /* Adjust as needed */
+}
+
+.hamburger {
+  display: none; /* Initially hidden on larger screens */
+}
+
+nav {
+  display: flex;
+  gap: 10px; /* Maintain spacing between links */
+}
+
+/* Adjustments for mobile */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
+  }
+
+  .navigation {
+    display: none; /* Hide navigation links initially on small screens */
+    position: absolute; /* Optional: Adjust based on layout needs */
+    right: 0;
+    top: 60px; /* Adjust based on the header height */
+    flex-direction: column;
+    background-color: var(--primary-color); /* Match header background or as desired */
+    width: 100%; /* Full width or adjust as needed */
+    align-items: flex-start; /* Align links to the start */
+    padding: 10px; /* Add some padding around links */
+  }
+
+  .nav-visible {
+    display: flex; /* Show navigation when active */
+  }
+
+  /* Ensure the header does not switch to column layout */
+  .App-header {
+    flex-direction: row;
+    justify-content: space-between; /* Keeps logo and hamburger on opposite ends */
+  }
+}
+.App-logo{
+  padding: 0;
+  margin: 0;
+}
+
+/* Continue with existing styles... */
+.testimonials {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.stories-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.story {
+  flex: 0 0 300px; /* Ensure the story has a fixed width */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 10px;
+  display: inline-block; /* Or 'flex' with 'flex-direction: column;' if you need to organize internal elements */
+  vertical-align: top;
+  overflow: hidden; /* This applies to the overall container, not the text directly */
+  word-wrap: break-word; /* Ensures that words can break and wrap to the next line */
+}
+
+.story h3 {
+  color: #007bff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.story h4 {
+  color: #6c757d;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.story p {
+  font-size: 14px;
+  text-align: justify;
+  margin: 0 0 10px; /* Adjust as needed */
+  word-wrap: break-word; /* Allows words to break and wrap to the next line */
+  overflow-wrap: break-word; /* Ensures overflow text can break into new lines */
+}
+
+.story-link {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.story-link:hover {
+  background-color: #0056b3;
+}
+
+.navigation-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 1px 1px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  font-size: 24px;
+}
+
+.navigation-arrow.left {
+  left: 10px;
+}
+
+.navigation-arrow.right {
+  right: 10px;
+}
+
+.navigation-arrow:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Keeps items spread across the header */
+  padding: 0; /* Remove padding to eliminate space around edges */
+  width: 100%; /* Ensures the header spans the full width */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #030303; /* Change color to fit your design */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+/* Add this to your App.css or a similar file */
+.thankYouMessage {
+  background-color: #4cae4c; /* Light grey background */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; /* Dark grey text */
 }
