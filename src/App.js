@@ -175,7 +175,8 @@ function App() {
       <footer>
         <h3>Innovapulse Limited</h3>
         <p><b>mail@Gignance.com</b></p>
-        <p>222 Waimea Road, Nelson, New Zealand, 7010 | +64225401142</p>
+        <p>+919875000098 | +64225401142</p>
+        <p>222 Waimea Road, Nelson, New Zealand, 7010</p>
       </footer>
     </div>
   );
