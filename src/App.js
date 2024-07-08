@@ -41,7 +41,7 @@ function App() {
   
     return (
       <section id="contact">
-        <h2>Get in Touch</h2>
+        <h2>Get in Touchg</h2>
         <p>Discover how our solutions can drive your business forward. Reach out to discuss your needs or start a project with us.</p>
         {!isSubmitted ? (
           <form onSubmit={submitForm}>
