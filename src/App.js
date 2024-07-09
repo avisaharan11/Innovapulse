@@ -10,13 +10,13 @@ import getUserLocation from './utils/getUserLocation';
 
 const CurrencyRedirect = () => {
   const links = {
-    EUR: "https://buy.stripe.com/00g6pl3RY14WaPuaEJ",
-    USD: "https://buy.stripe.com/28o00X3RY7tkg9O8wA",
-    AUD: "https://buy.stripe.com/6oEfZVbkq3d41eUdQT",
-    GBP: "https://buy.stripe.com/eVa9Bx4W2aFwaPu8wy",
-    NZD: "https://buy.stripe.com/cN24hdfAGbJA0aQdQW",
-    SAR: "https://buy.stripe.com/4gw8xtdsy2906ze6ov",
-    AED: "https://buy.stripe.com/aEU1510FM9Bs9LqaEM",
+    EUR: "https://buy.stripe.com/dR64hd1JQbJA4r6cMZ",
+    USD: "https://buy.stripe.com/7sI3d9gEK9BsbTyaES",
+    AUD: "https://buy.stripe.com/28o8xt0FM8xog9O7sH",
+    GBP: "https://buy.stripe.com/28obJF9ciaFw6zecN2",
+    NZD: "https://buy.stripe.com/6oEcNJbkq7tk5va5kw",
+    SAR: "https://buy.stripe.com/00geVR2NU00S4r65kv",
+    AED: "https://buy.stripe.com/7sI00X74aaFwf5K28i",
     SGD: "https://buy.stripe.com/28o00XgEK7tk6ze7sB"
   };
 
