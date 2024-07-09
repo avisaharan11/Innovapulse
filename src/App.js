@@ -17,7 +17,8 @@ const CurrencyRedirect = () => {
     GBP: "https://buy.stripe.com/eVa9Bx4W2aFwaPu8wy",
     NZD: "https://buy.stripe.com/cN24hdfAGbJA0aQdQW",
     SAR: "https://buy.stripe.com/4gw8xtdsy2906ze6ov",
-    AED: "https://buy.stripe.com/aEU1510FM9Bs9LqaEM"
+    AED: "https://buy.stripe.com/aEU1510FM9Bs9LqaEM",
+    SGD: "https://buy.stripe.com/28o00XgEK7tk6ze7sB"
   };
 
   useEffect(() => {
