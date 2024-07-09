@@ -1,10 +1,38 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import * as Realm from "realm-web";
+import { BrowserRouter as Router, Route,Routes, BrowserRouter, useParams } from 'react-router-dom';
 
 import './App.css';
 import logo from './logo.png'; // Ensure you have a logo.svg in your src folder
 import stella from './stella.svg';
+
+const CurrencyRedirect = () => {
+  const { currency } = useParams();
+
+  const links = {
+    EUR: "https://buy.stripe.com/00g6pl3RY14WaPuaEJ",
+    USD: "https://buy.stripe.com/28o00X3RY7tkg9O8wA",
+    AUD: "https://buy.stripe.com/6oEfZVbkq3d41eUdQT",
+    GBP: "https://buy.stripe.com/eVa9Bx4W2aFwaPu8wy",
+    NZD: "https://buy.stripe.com/cN24hdfAGbJA0aQdQW",
+    SAR: "https://buy.stripe.com/4gw8xtdsy2906ze6ov",
+    AED: "https://buy.stripe.com/aEU1510FM9Bs9LqaEM"
+  };
+
+  useEffect(() => {
+    const url = links[currency.toUpperCase()];
+    console.log("Redirecting to:", url); // Debug log
+    if (url) {
+      window.location.href = url;
+    } else {
+      window.location.href = links['NZD'];
+    }
+  }, [currency]);
+
+  return null; // Render nothing while redirecting
+};
+
 function App() {
 
   const ContactForm = () => {
@@ -41,7 +69,7 @@ function App() {
   
     return (
       <section id="contact">
-        <h2>Get in Touchg</h2>
+        <h2>Get in Touch</h2>
         <p>Discover how our solutions can drive your business forward. Reach out to discuss your needs or start a project with us.</p>
         {!isSubmitted ? (
           <form onSubmit={submitForm}>
@@ -96,6 +124,7 @@ function App() {
     document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
   };
   return (
+    <>
     <div className="App">
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
@@ -142,7 +171,7 @@ function App() {
         {/* About Us */}
         <section id="about">
           <h2>About Us</h2>
-          <p>Gignance, powered by Innovapulse Limited, is your global partner in IT, marketing, web development, and beyond. We're committed to propelling businesses forward through comprehensive remote freelancing solutions.</p>
+          <p>Gignance is your global partner in IT, marketing, web development, and beyond. We're committed to propelling businesses forward through comprehensive remote freelancing solutions.</p>
         </section>
 
         <section id="testimonials" className="testimonials">
@@ -173,12 +202,19 @@ function App() {
       </main>
 
       <footer>
-        <h3>Innovapulse Limited</h3>
+        <h3>Gignance</h3>
         <p><b>mail@Gignance.com</b></p>
         <p>+919875000098 | +64225401142</p>
-        <p>222 Waimea Road, Nelson, New Zealand, 7010</p>
+        <p>22 Waimea Road, Nelson, New Zealand, 7010</p>
       </footer>
     </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/promotion/:currency" element={<CurrencyRedirect />} />
+        {/* Define other routes as needed */}
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 
