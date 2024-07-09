@@ -6,10 +6,9 @@ import { BrowserRouter as Router, Route,Routes, BrowserRouter, useParams } from 
 import './App.css';
 import logo from './logo.png'; // Ensure you have a logo.svg in your src folder
 import stella from './stella.svg';
+import getUserLocation from './utils/getUserLocation';
 
 const CurrencyRedirect = () => {
-  const { currency } = useParams();
-
   const links = {
     EUR: "https://buy.stripe.com/00g6pl3RY14WaPuaEJ",
     USD: "https://buy.stripe.com/28o00X3RY7tkg9O8wA",
@@ -22,14 +21,39 @@ const CurrencyRedirect = () => {
   };
 
   useEffect(() => {
-    const url = links[currency.toUpperCase()];
-    console.log("Redirecting to:", url); // Debug log
-    if (url) {
-      window.location.href = url;
-    } else {
-      window.location.href = links['NZD'];
-    }
-  }, [currency]);
+    const redirectUser = async () => {
+      const location = await getUserLocation();
+      console.log('User location:', location); // Debug log
+
+      if (location) {
+        const countryToCurrencyMap = {
+          'DE': 'EUR',
+          'US': 'USD',
+          'AU': 'AUD',
+          'GB': 'GBP',
+          'NZ': 'NZD',
+          'SA': 'SAR',
+          'AE': 'AED',
+          'SG': 'SGD'
+          // Add more country codes and currencies as needed
+        };
+
+        const currency = countryToCurrencyMap[location.country] || 'NZD';
+        const url = links[currency];
+        console.log('Redirecting to:', url); // Debug log
+
+        if (url) {
+          window.location.href = url;
+        } else {
+          window.location.href = links['NZD'];
+        }
+      } else {
+        window.location.href = links['NZD'];
+      }
+    };
+
+    redirectUser();
+  }, []);
 
   return null; // Render nothing while redirecting
 };
@@ -210,10 +234,10 @@ function App() {
       </footer>
     </div>
     <BrowserRouter>
-      <Routes>
-        <Route path="/promotion/:currency" element={<CurrencyRedirect />} />
-        {/* Define other routes as needed */}
-      </Routes>
+    <Routes>
+    <Route path="/pay" element={<CurrencyRedirect />} />
+    {/* Define other routes as needed */}
+  </Routes>
     </BrowserRouter>
     </>
   );
