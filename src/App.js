@@ -235,7 +235,7 @@ function App() {
     </div>
     <BrowserRouter>
     <Routes>
-    <Route path="/promotion" element={<CurrencyRedirect />} />
+    <Route path="/marketing/pay" element={<CurrencyRedirect />} />
     {/* Define other routes as needed */}
   </Routes>
     </BrowserRouter>
