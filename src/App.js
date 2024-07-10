@@ -9,6 +9,8 @@ import stella from './stella.svg';
 import getUserLocation from './utils/getUserLocation';
 
 const CurrencyRedirect = () => {
+  const { currency } = useParams();
+
   const links = {
     EUR: "https://buy.stripe.com/dR64hd1JQbJA4r6cMZ",
     USD: "https://buy.stripe.com/7sI3d9gEK9BsbTyaES",
@@ -21,39 +23,14 @@ const CurrencyRedirect = () => {
   };
 
   useEffect(() => {
-    const redirectUser = async () => {
-      const location = await getUserLocation();
-      console.log('User location:', location); // Debug log
-
-      if (location) {
-        const countryToCurrencyMap = {
-          'DE': 'EUR',
-          'US': 'USD',
-          'AU': 'AUD',
-          'GB': 'GBP',
-          'NZ': 'NZD',
-          'SA': 'SAR',
-          'AE': 'AED',
-          'SG': 'SGD'
-          // Add more country codes and currencies as needed
-        };
-
-        const currency = countryToCurrencyMap[location.country] || 'NZD';
-        const url = links[currency];
-        console.log('Redirecting to:', url); // Debug log
-
-        if (url) {
-          window.location.href = url;
-        } else {
-          window.location.href = links['NZD'];
-        }
-      } else {
-        window.location.href = links['NZD'];
-      }
-    };
-
-    redirectUser();
-  }, []);
+    const url = links[currency.toUpperCase()];
+    console.log("Redirecting to:", url); // Debug log
+    if (url) {
+      window.location.href = url;
+    } else {
+      window.location.href = links['NZD'];
+    }
+  }, [currency]);
 
   return null; // Render nothing while redirecting
 };
@@ -235,9 +212,9 @@ function App() {
     </div>
     <BrowserRouter>
     <Routes>
-    <Route path="/marketing/pay" element={<CurrencyRedirect />} />
-    {/* Define other routes as needed */}
-  </Routes>
+        <Route path="/promotion/:currency" element={<CurrencyRedirect />} />
+        {/* Define other routes as needed */}
+      </Routes>
     </BrowserRouter>
     </>
   );
